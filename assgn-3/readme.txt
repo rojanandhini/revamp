@@ -1,6 +1,6 @@
 1. What is the Shortcut Emmet Used to Create boilerplate of HTML ?
 
-    Type *html:5* followed by Enter.
+    Type 'html:5' followed by Enter.
 
 
 2. What is DOCTYPE in Html ?
