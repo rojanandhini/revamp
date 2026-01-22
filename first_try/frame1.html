@@ -3,11 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frame1</title>
+    <title>Form</title>
 </head>
 <body>
-    <h1>This is 1st frame</h1><br>
-    <iframe src="./frame2.html" frameborder="1" width="100%" style="height:100vh"></iframe>
+    <center><h1>Welcome to the registration page</h1><br></center><hr>
+    <form action="">
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" autocapitalize="" placeholder="Enter your First Name"></td>
+            </tr>
+            <tr>
+                <td>Date Of Birth: </td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td>Gender: </td>
+                <td><input type="radio" name="Gender" id="r1" checked="1">Male <input type="radio" name="Gender" id="r1" > Female</td>
+            </tr>
+            <tr>
+                <td>Nationality: </td>
+                <td>
+                    <select>
+                        <option value="India">India</option>
+                        <option value="China">China</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Education: </td>
+                <td><input type="text" placeholder="Enter your degree" autocomplete="B.Tech"></td>
+            </tr>
+            <tr>
+                <td>Skills: </td>
+                <td>
+                    <input type="checkbox" name="skills" id="c1"> HTML 
+                    <input type="checkbox" name="skills" id="c1"> CSS 
+                    <input type="checkbox" name="skills" id="c1"> JS 
+                    <input type="checkbox" name="skills" id="c1"> REACT 
+                    <input type="checkbox" name="skills" id="c1"> PYTHON
+                    <input type="checkbox" name="skills" id="c1"> .NET  
+                    <input type="checkbox" name="skills" id="c1"> MS OFFICE 
+                </td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><input type="email">
+                <select name="domain" id="d1">
+                    <option value="">@gmail.com</option>
+                    <option value="">@ymail.com</option>
+                    <option value="">@hotmail.com</option>
+                    <option value="">@live.com</option>
+                    <option value="">others</option>
+                </select></td>
+            
+            </tr>
+            <tr>
+                <td>Mobile Number: </td>
+                <td><input type="tel"></td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td><input type="password" ></td>
+            </tr>
+            <tr>
+                <td>Upload Resume</td>
+                <td><input type="file" name="" id="" accept=".pdf"></td>
+            </tr>
+           
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+    <mark>delete</mark>
     
 </body>
 </html>
