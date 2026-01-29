@@ -2,6 +2,8 @@ name: Deploy Portfolio Index
 on:
   push:
     branches: ["main"] # Or your default branch\
+
+# This block must have 0 spaces before it (Workflow level)
 permissions:
   contents: read
   pages: write
