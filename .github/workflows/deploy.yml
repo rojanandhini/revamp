@@ -1,27 +1,26 @@
 name: Deploy Portfolio Index
+
 on:
   push:
-    branches: ["main"] # Or your default branch\
+    branches: ["master"]
 
-# This block must have 0 spaces before it (Workflow level)
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Automatically generate index.html for all subfolders
       - name: Generate Directory Index
         uses: gacts/directory-listing@v1
         with:
-          target: . # Scans the root for all project folders
-          ignore: ".github, .git" # Excludes hidden system folders
+          target: .
+          ignore: ".github, .git"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -29,7 +28,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.' # Uploads the entire repo including the new index.html
+          path: '.'
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
