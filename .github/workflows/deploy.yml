@@ -1,7 +1,7 @@
 name: Deploy Portfolio Index
 on:
   push:
-    branches: ["main"] # Or your default branch
+    branches: ["main"] # Or your default branch\
 permissions:
   contents: read
   pages: write
