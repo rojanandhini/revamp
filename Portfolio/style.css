@@ -1,0 +1,12 @@
+@import url('../assets/Satoshi_Complete/Fonts/WEB/css/satoshi.css');
+*{
+    font-family:Satoshi-Regular ; 
+}
+span{
+    font-family: Satoshi-Bold;
+}
+ .skills img{
+    width: 64px;
+    height: 64px;
+
+} 
