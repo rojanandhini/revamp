@@ -2,3 +2,24 @@
 *{
     font-family:'Poppins';
 }
+.box{
+    height: 60px;
+    overflow:hidden;
+    text-wrap: wrap;
+}
+.info{
+    width: 100%;
+    min-height: 5rem;
+    max-height: 220px;
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 10px;
+    font-size: small;
+    align-self: stretch;
+}
+.ticket{
+    font-size:small;
+}
+h2{
+    font-weight: 600;
+    }
