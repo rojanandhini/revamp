@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="flex justify-center items-center bg-[#0D2436] text-[#879BAB] space-y-3 py-10">
+                <img src="https://ik.imagekit.io/troja/revamp/food_store/food-munch-img.png?updatedAt=1769526855861" alt="food-munch-img" class="w-40 h-40 p-5">
+                <div class="flex flex-col space-y-3 px-5">
+                    <h1 class="text-3xl font-bold text-white">Reserve Your Table Now!</h1>
+                    <p class="text-lg">Experience the best dining experience with us. Reserve your table in advance to enjoy our exquisite menu and cozy ambiance.</p>
+                </div>
+        </div>
+    </header>
+    <!-- Reservation Form start -->
+     <main>
+        <div class="w-[100%] py-10">
+            <div class="w-[80%] mx-auto border border-gray-500 rounded-lg">
+                <div class="grid grid-cols-2 gap-4 p-10 ">
+                    <label for="r-date">Select Date: </label>
+                    <input type="date" name="r-date" id="r-date" class="border border-gray-500 rounded-lg w-[40%] px-3">
+                    <label for="r-time">Select your slot: </label>
+                    <div class="r-time grid grid-cols-3 gap-4">
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">11:30 PM</button>
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">1:00 PM</button>
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">2:30 PM</button>
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">4:00 PM</button>
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">6:30 PM</button>
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">8:00 PM</button>
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">9:30 PM</button>
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">11:00 PM</button>
+                    </div>
+                    <label for="guests">Number of Guests: </label>
+                    <div class="flex justify-between gap-4 ">
+                        <div class="border border-gray-400 rounded-lg px-4 py-2 mr-2">
+                            <button id="subBtn1" >-</button>
+                            <span id="mx-2">Adults</span>
+                            <span id="nos1">1</span>
+                            <button id="addBtn1">+</button>
+                        </div>
+                        <div class="border border-gray-400 rounded-lg px-4 py-2 mr-2">
+                            <button id="subBtn2" >-</button>
+                            <span id="mx-2">Children</span>
+                            <span id="nos2">0</span>
+                            <button id="addBtn2">+</button>
+                        </div>
+                    </div>
+                    <button id="confirm" name="confirm" class="border border-gray-400 rounded-lg px-4 py-2 mr-2 col-start-2 justify-self-center bg-blue-500 hover:bg-green-600">Confirm Table</button>
+                </div>
+                <div id="pay1" class="grid grid-cols-2 gap-4 p-10 rounded-lg hidden">
+                    <hr class="col-span-full">
+                    <label for="total">Total Guests:</label><span id="tot"></span>
+                <div class="col-start-2"> <span id="totAdult">0 </span> Adults
+                <span id="totChild"> 0</span> Children</div>
+                    <label for="price">Amount to Pay:</label>
+                    <span id="billCol" class="hidden"></span>
+                <div class=" col-start-2"> Dhs: <span id="price">0.00</span>    
+                        <button id="billBtn" class="text-blue-600 hover:text-yellow-400">view bill</button>
+                </div>
+                <div id="pd" class="col-start-2">
+                    <button id="payBton" class="text-[16px] text-white bg-gradient-to-b from-[#d0b200] to-[#a58d00]  rounded-lg px-5 py-3">Pay Now</button>
+                    <button id="laterBton" class="text-[16px] text-[#d0b200] border-[1px] border-[#d0b200] rounded-lg px-5 py-3">Pay at Counter</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Reservation form end -->
+     <!--Contact card start -->
+    <footer>
+        <div class="flex flex-col items-center bg-[#0D2436] text-[#879BAB] space-y-3 py-15">
+            <img src="https://ik.imagekit.io/troja/revamp/food_store/food-munch-img.png?updatedAt=1769526855861" alt="food-munch-img" class="w-[80px]">
+            <h2 class="text-[16px] font-bold">orderfood@foodmunch.com</h2>
+            <p class="text-[16px]">123 Ayur Vigyan Nagar, New Delhi, India.</p>
+        </div>
+    </footer>
+    <!--Contact card end -->
+</body>
+<script>
+    add1=document.getElementById("addBtn1")
+    sub1=document.getElementById("subBtn1")
+    no1=document.getElementById("nos1")
+    a=1
+    add2=document.getElementById("addBtn2")
+    sub2=document.getElementById("subBtn2")
+    no2=document.getElementById("nos2")
+    b=0
+    con=document.getElementById("confirm")
+    count=document.getElementById("tot")
+    adCount=document.getElementById("totAdult")
+    chCount=document.getElementById("totChild")
+    pay=document.getElementById("pay1")
+    cost=document.getElementById("price")
+    bill=document.getElementById("billCol")
+    bill.style.whiteSpace='pre-line';    
+    billBton=document.getElementById("billBtn")
+    
+    add1.onclick=()=>{
+        no1.textContent= ++a
+    }
+    sub1.onclick=()=>{
+        if (a>2)
+           no1.textContent= --a;
+        else
+            no1.textContent=1;
+    }
+    add2.onclick=()=>{
+        no2.textContent= ++b
+    }
+    sub2.onclick=()=>{
+        if (b>0)
+           no2.textContent= --b;
+        else
+            no2.textContent=0;
+    }
+    con.onclick=()=>{
+        pay.classList.remove("hidden")
+        count.textContent=a+b
+        adCount.textContent=a
+        chCount.textContent=b
+        price.textContent=(a*69+b*35+(a+b)*0.2+(a+b)*0.15).toFixed(2);
+    }
+    billBton.onclick=()=>{
+        bill.classList.remove("hidden")
+        billBton.classList.add("hidden")
+        
+        bill.textContent="Adults: "+a+"*69"+" = "+a*69+
+        "\nChilds: "+b+"*35"+" = "+b*35+
+        "\nService fee: "+((a+b)*0.2).toFixed(2)+
+        "\nvat: "+((a+b)*0.15).toFixed(2);
+        
+    }
+</script>
+</html>

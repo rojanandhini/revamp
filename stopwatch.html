@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="max-w-[100%]">
+    <div class="w-[50%] mx-auto flex flex-col gap-5 justify-center items-center border rounded-xl py-5 my-5">
+        <h2 class="bg-green-200 text-pink-600 px-5 py-2 rounded-full">Timer</h2>
+        <p id="para">
+            0
+        </p>
+    
+    <div class="flex gap-5">
+        <button class="border px-5 py-2 bg-yellow-300 text-emerald-800 rounded-xl" id="startbtn">Start</button>
+        <button class="border px-5 py-2 bg-yellow-300 text-emerald-800 rounded-xl" id="endbtn">Stop</button>
+        <button class="border px-5 py-2 bg-yellow-300 text-emerald-800 rounded-xl" id="resetbtn">Reset</button>
+    </div>
+</div>
+</div>
+</body>
+<script>
+    start=document.getElementById("startbtn")
+    end=document.getElementById("endbtn")
+    reset=document.getElementById("resetbtn")
+    paraCont=document.getElementById("para")
+     a=0
+    let set;
+    start.onclick=()=>{
+        console.log("clicked start")
+        set=setInterval(()=>{paraCont.innerHTML=a++},1000); 
+    }
+    end.onclick=()=>{
+        console.log("clicked end")
+    setTimeout(()=>{clearInterval(set)},0)
+    }
+    reset.onclick=()=>{
+        console.log("clicked reset")
+        a=0;
+        paraCont.innerHTML=a;
+        
+    }
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update_password</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--FireBase SDK-->
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="w-[350px] h-[500px] rounded-md text-white bg-gradient-to-b from-[#FDA5B5] to-[#9B72BF] mx-auto py-10 px-10 my-15">
+        <h1 class="py-5 text-[32px] font-bold">Update Password</h1>
+        <form action="" id="update_pass_form" class="flex flex-col gap-3 text-[14px] font-semibold">
+            <label for="user_name">User Name</label>
+            <input type="text" name="user_name" id="user_name" placeholder="Enter username" class="rounded-md text-black bg-white border-slate-300 placeholder-slate-300 p-2 focus:outline-none  focus:ring-1 focus:ring-sky-500 ">
+            <label for="new_pass">NEW PASSWORD</label>
+            <input type="password" name="new_pass" id="new_pass" placeholder="Create new password" class="rounded-md text-black bg-white border-slate-300 placeholder-slate-300 p-2 focus:outline-none  focus:ring-1 focus:ring-sky-500 ">
+            <p id="newPassErrMsg" class="text-red-500"></p>
+            <label for="new_pass">CONFIRM PASSWORD</label>
+            <input type="password" name="old_pass" id="con_pass" placeholder="Confirm password" class="rounded-md text-black bg-white border-slate-300 placeholder-slate-300 p-2 focus:outline-none  focus:ring-1 focus:ring-sky-500">
+            <p id="oldPassErrMsg"></p>
+            <button type="button" id="updateBtn" class="rounded-md bg-blue-500 py-2 px-3 text-[18px] self-center">Update</button>       
+        </form>
+    </div>
+</body>
+<script>
+    // Get DOM elements
+    const passForm = document.getElementById("update_pass_form");
+    const name = document.getElementById("user_name");
+    const newPass = document.getElementById("new_pass");
+    const conPass = document.getElementById("con_pass");
+    const newErr = document.getElementById("newPassErrMsg");
+    const conErr = document.getElementById("oldPassErrMsg");
+    const uBtn = document.getElementById("updateBtn");
+
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCV4nvmyKkUNw9HP2qWAVjz-g-m_n2f4xA",
+        authDomain: "updatepassword-e50d5.firebaseapp.com",
+        databaseURL: "https://updatepassword-e50d5-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "updatepassword-e50d5",
+        storageBucket: "updatepassword-e50d5.firebasestorage.app",
+        messagingSenderId: "298929642514",
+        appId: "1:298929642514:web:a3c7946c80796a4bbccccb"
+    };
+
+    // Wait for Firebase to load
+    document.addEventListener("DOMContentLoaded", function() 
+    {
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database().ref("passForm");
+
+        function newPassValidate() {
+            if (newPass.value === "") {
+                newErr.textContent = "Required*";
+                return false;
+            } else if (newPass.value.length < 8 || newPass.value.length > 16) {
+                newErr.textContent = "Password Length should be more than 8 and less than 15";
+                return false;
+            } else {
+                newErr.textContent = "";
+                console.log(newPass.value);
+                return true;
+            }
+        }
+
+        newPass.onblur = () => newPassValidate();
+        newPass.onfocus = () => newErr.textContent = "";
+
+        function conPassValidate() {
+            if (conPass.value != newPass.value) {
+                conErr.textContent = "Password should match";
+                return false;
+            } else {
+                conErr.textContent = "";
+                console.log(conPass.value);
+                return true;
+            }
+        }
+
+        conPass.onblur = () => conPassValidate();
+        conPass.onfocus = () => conErr.textContent = "";
+
+        uBtn.onclick = (e) => {
+            
+            if (newPassValidate() && conPassValidate()) {
+                db.child(name.value).set({
+                    
+                    Password: conPass.value
+                });
+                alert("Updated!");
+                passForm.reset();
+            } else {
+                e.preventDefault();
+                alert("Check Error!!");
+
+            }
+        };
+    });
+</script>
+</html>

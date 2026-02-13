@@ -8,9 +8,30 @@
     <title>Food Store</title>
 </head>
 <body>
+    <!-- nav bar starts -->
+     <nav class="max-w-[100%] bg-white fixed min-w-full py-3">
+        <div class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="flex justify-between items-center">
+                <a href="#head">
+                <img src="https://ik.imagekit.io/troja/revamp/food_store/food-munch-img.png?updatedAt=1769526855861" alt="logo" class="w-[80px] h-[70px]">
+                </a>
+                <div class="border border-[#E8E8E8] rounded-sm block md:hidden w-[55px] h-[40px]" id="burgerMenu"><svg xmlns="http://www.w3.org/2000/svg" width="55" height="40" viewBox="0 0 24 24" fill="none" stroke="#898989" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></div> 
+                <div class="border border-[#E8E8E8] rounded-sm hidden md:hidden w-[55px] h-[40px]" id="closeMenu"><svg xmlns="http://www.w3.org/2000/svg" width="55" height="40" viewBox="0 0 24 24" fill="none" stroke="#898989" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></div>
+            </div>
+            <div class="hidden md:block" id="menuList">
+                <div class="flex flex-col md:flex-row justify-between py-5 text-[#323f4b] gap-3" >
+                    <a href="#whyUs">Why Choose Us?</a>
+                    <a href="#explore">Explore Menu</a>
+                    <a href="#pay">Delivery & Payment</a>
+                    <a href="#follow">Follow Us</a>
+                </div>
+            </div>
+        </div>
+     </nav>
+     <!-- nav bar ends -->
     <!-- header section start-->
      <header>
-        <div class="max-w-[100%] bg-[url(https://ik.imagekit.io/troja/revamp/food_store/foodmunch-banner-bg.png_updatedAt=1745939013497?updatedAt=1769526921269)] bg-cover h-screen">
+        <div id="head" class="max-w-[100%] bg-[url(https://ik.imagekit.io/troja/revamp/food_store/foodmunch-banner-bg.png_updatedAt=1745939013497?updatedAt=1769526921269)] bg-cover h-screen">
             <div class="w-[80%] mx-auto py-15 flex flex-col justify-center items-center gap-5 h-full">
                 <h2 class="text-white text-[45px]">
                     Get Delicious Food Anytime
@@ -29,13 +50,14 @@
      <!-- header section end-->
     <!-- Why Choose Us Start-->
      <section>
-         <div class="max-w-[100%] bg-[#F9FBFE] py-15">
+         <div class="max-w-[100%] bg-[#F9FBFE] py-15" id="whyUs">
             <div class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- heading -->
                 <div class="col-span-12">
                     <h2 class="text-[28px] font-bold text-[#183b56]">Why Choose Us?</h2>
                     <p class="text-[16px] font-normal text-[#5a7184]">We use both original recipes and classic versions of famous food items.</p>
                 </div>
+                <!-- cards beginning -->
             </div>
                 <div class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-5">
                 <!-- card1 -->
@@ -69,7 +91,7 @@
     <!-- Why Choose Us End-->
     <!-- Explorer Menu Start-->
      <main>
-        <div class="max-w-[100%] py-15">
+        <div class="max-w-[100%] py-15" id="explore">
             <div class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 <div class="col-span-full text-[28px] font-bold text-[#183b56] ">
                     <h2 >Explore Menu</h2>
@@ -150,12 +172,12 @@
      </div>
     <!-- Healthy card end -->
     <!-- Payment card start -->
-     <div class="max-w-[100%] py-15">
+     <div class="max-w-[100%] py-15" id="pay">
         <div class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 ">
             <div class="flex flex-col items-start space-y-3 order-2 md:order-1 ">
-                    <h2 class="text-[28px] text-[#183b56] font-bold">Delivery and Payment</h2>
+                    <h2 class="text-[28px] text-[#183b56] font-bold">Reservation and Delivery</h2>
                     <p class="text-[16px] text-[#5a7184] font-normal">Enjoy hassle-free payment with the plenitude of payment options available for you. Get live tracking and locate your food on a live map. It's quite a sight to see your food arrive to your door. Plus, you get a 5% discount on every order every time you pay online.</p>
-                    <button class="text-[16px] text-white bg-gradient-to-b from-[#d0b200] to-[#a58d00] border rounded-lg px-5 py-3">Order Now</button>
+                    <a href="./reservation.html" class="text-[16px] text-white bg-gradient-to-b from-[#d0b200] to-[#a58d00] border rounded-lg px-5 py-3">Reserve Now</a>
                     <div class="flex space-x-5">
                         <img src="https://ik.imagekit.io/troja/revamp/food_store/visa-card-img.png?updatedAt=1769580376969" alt="visa-img" class="size-15 ">
                         <img src="https://ik.imagekit.io/troja/revamp/food_store/master-card-img.png?updatedAt=1769580415536" alt="master-img" class="size-15 ">
@@ -172,18 +194,26 @@
     <!-- thank you-card start-->
      <div class="max-w-[100%] bg-gradient-to-b from-[#fae38c] via-[#fff8db] to-[#fae38c] py-15">
         <div class="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 ">
-            
-            <div class="flex flex-col justify-center items-start space-y-3">
+            <div class="flex justify-between col-span-full">
+                <div class="flex flex-col justify-center items-start space-y-3">
                     <h2 class="text-[28px] text-[#183b56] font-bold">Thank you for being a valuable customer to us.</h2>
                     <p class="text-[16px] text-[#5a7184] font-normal">We have a surprise gift for you</p>
-                    <button class="text-[16px] text-white bg-gradient-to-b from-[#d0b200] to-[#a58d00] border rounded-lg px-5 py-3">Redeem Gift</button>
+                    <div class="order-2 md:order-1">
+                        <button class="text-[16px] text-white bg-gradient-to-b from-[#d0b200] to-[#a58d00] border rounded-lg px-5 py-3 ">Redeem Gift</button>
+                    </div>
+                    <div class="order-1 md:order-2 block md:hidden">
+                        <img src="https://ik.imagekit.io/troja/revamp/food_store/thanking-customers-section-img.png?updatedAt=1769580461449" alt="thanking-customers-img" class="w-[270px] mx-auto ">
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="https://ik.imagekit.io/troja/revamp/food_store/thanking-customers-section-img.png?updatedAt=1769580461449" alt="thanking-customers-img" class="w-[270px] mx-auto ">
+                </div>
             </div>
-            <img src="https://ik.imagekit.io/troja/revamp/food_store/thanking-customers-section-img.png?updatedAt=1769580461449" alt="thanking-customers-img" class="w-[270px] mx-auto">
         </div>
      </div>
     <!-- thank you-card end -->
     <!-- Social Media card start-->
-     <div class="flex flex-col items-center py-15">
+     <div class="flex flex-col items-center py-15" id="follow">
         <h2 class="text-[28px] text-[#183b56] font-bold">Follow Us</h2>
         <div class="flex space-x-5">
             <div class="bg-[#FAF7E8] rounded-full p-5 ">
@@ -207,6 +237,21 @@
             <p class="text-[16px]">123 Ayur Vigyan Nagar, New Delhi, India.</p>
         </div>
     </footer>
-    <!--Contact card start -->
+    <!--Contact card end -->
 </body>
+<script>
+    menu=document.getElementById("burgerMenu")
+    cross=document.getElementById("closeMenu")
+    navItems=document.getElementById("menuList")
+    menu.addEventListener("click",()=>{
+        cross.classList.remove("hidden")
+        menu.classList.add("hidden")
+        navItems.classList.remove("hidden")
+    })
+    cross.addEventListener("click",()=>{
+        cross.classList.add("hidden")
+        menu.classList.remove("hidden")
+        navItems.classList.add("hidden")
+    })
+</script>
 </html>
