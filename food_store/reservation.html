@@ -6,6 +6,10 @@
     <title>Reservation</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
+     <!--FireBase SDK-->
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 <body>
     <header>
@@ -21,12 +25,12 @@
      <main>
         <div class="w-[100%] py-10">
             <div class="w-[80%] mx-auto border border-gray-500 rounded-lg">
-                <div class="grid grid-cols-2 gap-4 p-10 ">
+                <div id="resForm" class="grid grid-cols-2 gap-4 p-10 ">
                     <label for="r-date">Select Date: </label>
                     <input type="date" name="r-date" id="r-date" class="border border-gray-500 rounded-lg w-[40%] px-3">
                     <label for="r-time">Select your slot: </label>
-                    <div class="r-time grid grid-cols-3 gap-4">
-                        <button class="border border-gray-400 rounded-lg px-4 py-2">11:30 PM</button>
+                    <div class="r-time grid grid-cols-3 gap-4" id="r-time">
+                        <button class="border border-gray-400 rounded-lg px-4 py-2">11:30 AM</button>
                         <button class="border border-gray-400 rounded-lg px-4 py-2">1:00 PM</button>
                         <button class="border border-gray-400 rounded-lg px-4 py-2">2:30 PM</button>
                         <button class="border border-gray-400 rounded-lg px-4 py-2">4:00 PM</button>
@@ -81,28 +85,52 @@
     </footer>
     <!--Contact card end -->
 </body>
-<script>
-    add1=document.getElementById("addBtn1")
-    sub1=document.getElementById("subBtn1")
-    no1=document.getElementById("nos1")
-    a=1
-    add2=document.getElementById("addBtn2")
-    sub2=document.getElementById("subBtn2")
-    no2=document.getElementById("nos2")
-    b=0
-    con=document.getElementById("confirm")
-    count=document.getElementById("tot")
-    adCount=document.getElementById("totAdult")
-    chCount=document.getElementById("totChild")
-    pay=document.getElementById("pay1")
-    cost=document.getElementById("price")
-    bill=document.getElementById("billCol")
+<script >
+  
+    reserveForm=document.getElementById("resForm");
+    rdate=document.getElementById("r-date");
+    rTime=document.getElementById("r-time");
+    add1=document.getElementById("addBtn1");
+    sub1=document.getElementById("subBtn1");
+    no1=document.getElementById("nos1");
+    a=1;
+    add2=document.getElementById("addBtn2");
+    sub2=document.getElementById("subBtn2");
+    no2=document.getElementById("nos2");
+    b=0;
+    con=document.getElementById("confirm");
+    count=document.getElementById("tot");
+    adCount=document.getElementById("totAdult");
+    chCount=document.getElementById("totChild");
+    pay=document.getElementById("pay1");
+    cost=document.getElementById("price");
+    bill=document.getElementById("billCol");
     bill.style.whiteSpace='pre-line';    
-    billBton=document.getElementById("billBtn")
+    billBton=document.getElementById("billBtn");
+    c=0;
+    selectedDate=rdate.value;
+    let selectedTime = null;
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAwjbEfbR-uDUMB7OCVTnPWQP5tLut46IY",
+        authDomain: "foodreservation-d1156.firebaseapp.com",
+        databaseURL: "https://foodreservation-d1156-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "foodreservation-d1156",
+        storageBucket: "foodreservation-d1156.firebasestorage.app",
+        messagingSenderId: "217763936350",
+        appId: "1:217763936350:web:7fb1f4cc33f90c41f9dccf"
+        };
+
+    document.addEventListener("DOMContentLoaded", function() 
+    {
     
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
     add1.onclick=()=>{
         no1.textContent= ++a
     }
+    
     sub1.onclick=()=>{
         if (a>2)
            no1.textContent= --a;
@@ -118,12 +146,95 @@
         else
             no2.textContent=0;
     }
+    
+    // Add time slot selection listeners
+    const timeButtons = document.querySelectorAll("#r-time button");
+    console.log(timeButtons.length);
+    timeButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            // Remove active class from all buttons
+            timeButtons.forEach(btn => btn.classList.remove("bg-blue-500", "text-white"));
+            // Add active class to clicked button
+            button.classList.add("bg-blue-500", "text-white");
+            selectedTime = button.textContent;
+            console.log(selectedTime);
+        });
+    });
+    function checkBookedSlots(date) {
+
+        db.ref("reservations").child(date).once("value", snapshot => {
+
+                const bookedSlots = snapshot.val();
+
+                const buttons = document.querySelectorAll("#r-time button");
+
+                buttons.forEach(btn => {
+
+                    btn.disabled = false;
+                    btn.classList.remove("bg-gray-400", "cursor-not-allowed");
+
+                    if (bookedSlots && bookedSlots[btn.textContent]) {
+                        btn.disabled = true;
+                        btn.classList.add("bg-gray-400", "cursor-not-allowed");
+                    }
+
+                });
+            });
+        }
+    
+    rdate.onchange = function () {
+    selectedDate = this.value;
+    console.log(selectedDate);
+    if (!selectedDate) return;
+
+    checkBookedSlots(selectedDate);
+    };
     con.onclick=()=>{
         pay.classList.remove("hidden")
         count.textContent=a+b
         adCount.textContent=a
         chCount.textContent=b
-        price.textContent=(a*69+b*35+(a+b)*0.2+(a+b)*0.15).toFixed(2);
+        c=(a*69+b*35+(a+b)*0.2+(a+b)*0.15).toFixed(2);
+        price.textContent=c;
+        
+        const reservedData={ 
+        totalguests:a+b,
+        totalCost:c
+        };
+       /* db.ref("reservations").child(rdate.value).set(reservedData)
+            .then(() => {
+                console.log("Saved with ID:", newRef.key);
+            });
+      */
+      if (!selectedDate || !selectedTime) {
+        alert("Please select date and time");
+        return;
+    }
+
+    const slotRef = db
+        .ref("reservations")
+        .child(selectedDate)
+        .child(selectedTime);
+
+    slotRef.set(reservedData)
+        .then(() => {
+            console.log("Slot booked!");
+
+            // Disable selected button immediately
+            const buttons = document.querySelectorAll("#r-time button");
+
+            buttons.forEach(btn => {
+                if (btn.textContent === selectedTime) {
+                    btn.disabled = true;
+                    btn.classList.add("bg-gray-400", "cursor-not-allowed");
+                }
+            });
+
+        })
+        .catch(error => {
+            console.error(error);
+        });
     }
     billBton.onclick=()=>{
         bill.classList.remove("hidden")
@@ -135,5 +246,6 @@
         "\nvat: "+((a+b)*0.15).toFixed(2);
         
     }
+    });
 </script>
 </html>
