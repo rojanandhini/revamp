@@ -101,7 +101,7 @@ export const ProductSection=()=>{
             {
                 ProductData.map((items,index)=>{
                     return (
-                        <div key={items.index}>
+                        <div key={index}>
                             <ProductCard
                                 offer={items.offer}
                                 Product_name={items.Product_name}

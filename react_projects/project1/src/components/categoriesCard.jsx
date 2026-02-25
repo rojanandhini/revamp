@@ -515,7 +515,7 @@ return(<section className="bg-[#EECCFE] w-[90%] mx-auto rounded-lg mb-2 py-8 ant
       {
         categoryItem.map((items,index)=>{
                           return (
-                              <div key={items.index}>
+                              <div key={index}>
                                   <CategoryItems
                                     catName={items.catName}
                                     catImg={items.catImg}
