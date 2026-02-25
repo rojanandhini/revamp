@@ -1,7 +1,7 @@
 export const Categories=()=>{
   const categoryItem=[
     {
-      catName:"Computer and Office",
+      catName:"Computer & Office",
       catImg:<svg
             className="me-2 h-4 w-4 shrink-0 text-gray-900 "
             aria-hidden="true"
@@ -21,7 +21,7 @@ export const Categories=()=>{
           </svg>
   },
     {
-      catName:"Collectibles &amp; Toys",
+      catName:"Collectibles & Toys",
     catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
@@ -78,7 +78,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Sports &amp; Outdoors",
+    {catName:"Sports & Outdoors",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
@@ -96,7 +96,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Painting &amp; Hobby",
+    {catName:"Painting & Hobby",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
@@ -134,7 +134,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Food &amp; Grocery",
+    {catName:"Food & Grocery",
       catImg: <svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
@@ -190,7 +190,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Health &amp; beauty",
+    {catName:"Health & beauty",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
@@ -247,7 +247,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:" Car &amp; Motorbike",
+    {catName:" Car & Motorbike",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
@@ -290,7 +290,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Security &amp; Wi-Fi",
+    {catName:"Security & Wi-Fi",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
