@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const SearchBar=()=>{
 return (
     <section className="bg-white fixed top-16 w-full">
@@ -39,6 +41,7 @@ return (
         <div className="flex flex-col items-stretch justify-end flex-shrink-0 w-full space-y-2 md:w-auto md:flex-row md:space-y-0 md:items-center md:space-x-3">
           
           <div className="flex items-center w-full space-x-3 md:w-auto">
+            <Link to="/signup">
             <button
               id="actionsDropdownButton"
               data-dropdown-toggle="actionsDropdown"
@@ -49,7 +52,7 @@ return (
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
               </svg>
 
-              Login  
+              Signup 
 
               <svg
                 className="-mr-1 ml-1.5 w-5 h-5"
@@ -66,7 +69,7 @@ return (
               </svg>
               
             </button>
-            
+            </Link>
             <button
               id="filterDropdownButton"
               data-dropdown-toggle="filterDropdown"

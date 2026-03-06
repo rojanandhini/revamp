@@ -1,4 +1,6 @@
   import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
   return (
@@ -7,13 +9,15 @@ const Header = () => {
     {/* Start coding here */}
     <div className=" overflow-hidden bg-white ">
       <div className="flex flex-col items-center justify-between p-2 space-y-3 md:flex-row md:space-y-0 md:space-x-4">
+      <Link to="/">
         <button
-          type="button"
+          type="button" 
           className="flex items-center justify-center w-full px-5 py-1 text-sm font-medium text-black rounded-lg md:w-auto bg-[#FFE51F] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:outline-none "
         >
           <img src="..\src\flipkart_logo.png" alt="flipkart_logo" className="w-[30px] h-[40px]" />
           Flipkart
         </button>
+        </Link>
         <div
           className="inline-flex flex-col w-full md:w-auto md:flex-row"
           role="group"

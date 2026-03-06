@@ -1,5 +1,5 @@
 export const Hero=()=>{
-    return(<section className="bg-white pt-[140px]">
+    return(<section className="bg-lime-100 mb-4">
   <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-12">
     <a
       href="#"

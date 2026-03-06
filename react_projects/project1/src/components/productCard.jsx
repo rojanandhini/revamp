@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const ProductSection=()=>{
-
- const ProductData=[
+ const [productData,setProductData]=useState([]);
+ const fetchProdData=async()=>{
+  try{
+    const res = await fetch("https://dummyjson.com/products");
+    const data= await res.json();
+    setProductData(data.products);
+  }catch(error){
+    console.log("Fetch Product data error: ",error);
+  }
+ };
+ useEffect(()=>{
+  (async ()=>{
+   await fetchProdData();
+  })();
+ },[]);
+ /*const ProductData=[
     {
         offer: 35,
         Product_name:"Lenovo IDEAPAD",
@@ -58,7 +74,7 @@ export const ProductSection=()=>{
         review: 3615,
         price: 1320
 }];
-
+*/
  return(<section className="bg-[#E7E2FF] w-[90%] mx-auto rounded-lg py-1 antialiased md:py-12 mb-2">
   <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
     {/* Heading & Filters */}
@@ -99,15 +115,17 @@ export const ProductSection=()=>{
     </div>
     <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
             {
-                ProductData.map((items,index)=>{
+                productData.map((items,index)=>{
                     return (
                         <div key={index}>
                             <ProductCard
-                                offer={items.offer}
-                                Product_name={items.Product_name}
+                                productId={items.id}
+                                offer={items.discountPercentage}
+                                Product_name={items.title}
                                 rating={items.rating}
-                                review={items.review}
+                                review={items.stock}
                                 price={items.price}
+                                img={items.thumbnail}
                             />
                         </div>
                     );
@@ -125,18 +143,18 @@ export const ProductSection=()=>{
 export const ProductCard=(props)=>{
    return(<div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
    <div className="h-56 w-full">
-          <a href="#">
+          <Link to={`/productdetail/${props?.productId}`} >
             <img
               className="mx-auto h-full dark:hidden"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
+              src={props?.img}
               alt=""
             />
             <img
               className="mx-auto hidden h-full dark:block"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
+              src={props?.img}
               alt=""
             />
-          </a>
+          </Link>
         </div>
         <div className="pt-6">
           <div className="mb-4 flex items-center justify-between gap-4">
@@ -214,12 +232,12 @@ export const ProductCard=(props)=>{
               </div>
             </div>
           </div>
-          <a
-            href="#"
+          <Link
+            to={`/productdetail/${props?.productId}`}
             className="text-lg font-semibold leading-tight text-gray-900 hover:underline"
           >
             {props?.Product_name}
-          </a>
+          </Link>
           <div className="mt-2 flex items-center gap-2">
             <div className="flex items-center">
               <svg
