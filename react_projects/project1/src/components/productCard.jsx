@@ -1,80 +1,11 @@
-import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
+import useFetchProdData from "../hooks/useFetchProdData";
 
 export const ProductSection=()=>{
- const [productData,setProductData]=useState([]);
- const fetchProdData=async()=>{
-  try{
-    const res = await fetch("https://dummyjson.com/products");
-    const data= await res.json();
-    setProductData(data.products);
-  }catch(error){
-    console.log("Fetch Product data error: ",error);
-  }
- };
- useEffect(()=>{
-  (async ()=>{
-   await fetchProdData();
-  })();
- },[]);
- /*const ProductData=[
-    {
-        offer: 35,
-        Product_name:"Lenovo IDEAPAD",
-        rating: 5.0,
-        review: 455,
-        price: 3600
-},
-  {
-        offer: 25,
-        Product_name:"SAMSUNG Flip",
-        rating: 4.5,
-        review: 4505,
-        price: 2600
-},
-  {
-        offer: 28,
-        Product_name:"AmazFit Pro",
-        rating:3.8,
-        review: 269,
-        price: 1500
-},
-  {
-        offer: 23,
-        Product_name:"Logitech LED Keyboard",
-        rating: 4.5,
-        review: 385,
-        price: 780
-},
-  {
-        offer: 35,
-        Product_name:"Bose HeadPhones",
-        rating: 5.0,
-        review: 1365,
-        price: 2299
-    },
-    {
-        offer: 30,
-        Product_name:"mac Stylus",
-        rating: 4.6,
-        review: 135,
-        price: 299
-    },
-    {
-        offer: 18,
-        Product_name:"Gaming Joystick",
-        rating: 3.4,
-        review: 365,
-        price: 436
-    },
-    {
-        offer: 26,
-        Product_name:"iPad",
-        rating: 3.7,
-        review: 3615,
-        price: 1320
-}];
-*/
+ 
+  const productData= useFetchProdData();
+
  return(<section className="bg-[#E7E2FF] w-[90%] mx-auto rounded-lg py-1 antialiased md:py-12 mb-2">
   <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
     {/* Heading & Filters */}

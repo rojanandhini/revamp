@@ -1,6 +1,6 @@
-  import React from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
-
+import flipkart_logo from "../assets/header/flipkart_logo.png"
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
           type="button" 
           className="flex items-center justify-center w-full px-5 py-1 text-sm font-medium text-black rounded-lg md:w-auto bg-[#FFE51F] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:outline-none "
         >
-          <img src="..\src\flipkart_logo.png" alt="flipkart_logo" className="w-[30px] h-[40px]" />
+          <img src={flipkart_logo} alt="flipkart_logo" className="w-[30px] h-[40px]" />
           Flipkart
         </button>
         </Link>

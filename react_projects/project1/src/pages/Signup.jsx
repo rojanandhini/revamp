@@ -13,7 +13,7 @@ export const Signup = () => {
     handleSubmit,
 formState:{errors},}= useForm({resolver: zodResolver(schema),})
     const formSubmit=(data)=>{console.log(data)}
-  const [selected, setSelected] = useState("Female");
+//   const [selected, setSelected] = useState("Female");
   return (
     <form className='flex flex-col gap-5 items-center py-10' onSubmit={handleSubmit(formSubmit)}>
         <h1 className='text-3xl'>Login</h1>

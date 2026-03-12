@@ -40,7 +40,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Books",
+    {catName:"Books & eBooks",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
               aria-hidden="true"
@@ -96,25 +96,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Painting & Hobby",
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z"
-              />
-            </svg>
-    },
+   
     {catName:"Electronics",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
@@ -153,43 +135,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:"Music",
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M20 16v-4a8 8 0 1 0-16 0v4m16 0v2a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2ZM4 16v2a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2Z"
-              />
-            </svg>
-    },
-    {catName:"TV/Projectors",
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v1M9 12H4m8 8V9h8v11h-8Zm0 0H9m8-4a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"
-              />
-            </svg>
-    },
+   
     {catName:"Health & beauty",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
@@ -209,25 +155,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:" Home Air Quality",
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
-              />
-            </svg>
-    },
+   
     {catName:"Gaming/Consoles",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
@@ -247,68 +175,7 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {catName:" Car & Motorbike",
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
-              />
-            </svg>
-    },
-    {catName:"Photo/Video",
-      catImg: <svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 18V8a1 1 0 0 1 1-1h1.5l1.707-1.707A1 1 0 0 1 8.914 5h6.172a1 1 0 0 1 .707.293L17.5 7H19a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"
-              />
-              <path
-                stroke="currentColor"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              />
-            </svg>
-    },
-    {catName:"Security & Wi-Fi",
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 12a28.076 28.076 0 0 1-1.091 9M7.231 4.37a8.994 8.994 0 0 1 12.88 3.73M2.958 15S3 14.577 3 12a8.949 8.949 0 0 1 1.735-5.307m12.84 3.088A5.98 5.98 0 0 1 18 12a30 30 0 0 1-.464 6.232M6 12a6 6 0 0 1 9.352-4.974M4 21a5.964 5.964 0 0 1 1.01-3.328 5.15 5.15 0 0 0 .786-1.926m8.66 2.486a13.96 13.96 0 0 1-.962 2.683M7.5 19.336C9 17.092 9 14.845 9 12a3 3 0 1 1 6 0c0 .749 0 1.521-.031 2.311M12 12c0 3 0 6-2 9"
-              />
-            </svg>
-    },
+   
     {catName:"Computer Peripherals",
       catImg:<svg
               className="me-2 h-4 w-4 shrink-0 text-gray-900 "
@@ -357,161 +224,11 @@ export const Categories=()=>{
               />
             </svg>
     },
-    {
-      catImg: <svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>,
-      catName:"Watches"
-    },
-    {
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16.444 18H19a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h2.556M17 11V5a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v6h10ZM7 15h10v4a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-4Z"
-              />
-            </svg>,
-      catName:" Printers"
-    },
-    {
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Zm0 0-4 4m5 0H4m1 0 4-4m1 4 4-4m-4 7v6l4-3-4-3Z"
-              />
-            </svg>,
-      catName:"Projectors"
-    },
-    {
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-              />
-            </svg>,
-      catName:"Skin Care"
-    },
-    {
-      catImg: <svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 18V8a1 1 0 0 1 1-1h1.5l1.707-1.707A1 1 0 0 1 8.914 5h6.172a1 1 0 0 1 .707.293L17.5 7H19a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"
-              />
-              <path
-                stroke="currentColor"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              />
-            </svg>,
-      catName:"Photo/Video"
-    },
-    {
-      catImg:<svg
-              className="me-2 h-4 w-4 shrink-0 text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 12v1h4v-1m4 7H6a1 1 0 0 1-1-1V9h14v9a1 1 0 0 1-1 1ZM4 5h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
-              />
-            </svg>,
-      catName:"Office Supplies"
-    }];
-return(<section className="bg-[#EECCFE] w-[90%] mx-auto rounded-lg mb-2 py-8 antialiased md:py-8">
-  <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-    <div className="mb-4 flex items-center justify-between gap-4 md:mb-8">
-      <h2 className="text-xl font-semibold text-gray-900  sm:text-2xl">
-        Shop by category
-      </h2>
-      <a
-        href="#"
-        title=""
-        className="flex items-center text-base font-medium text-primary-700 hover:underline dark:text-primary-500"
-      >
-        See more categories
-        <svg
-          className="ms-1 h-5 w-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width={24}
-          height={24}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 12H5m14 0-4 4m4-4-4-4"
-          />
-        </svg>
-      </a>
-    </div>
-    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+    
+   ];
+return(<section className="w-full  rounded-lg antialiased fixed top-32 ">
+  <div className="max-w-screen-xl mx-auto px-4 2xl:px-0 py-2 w-full mt-2  bg-white">
+    <div className="flex ">
       {
         categoryItem.map((items,index)=>{
                           return (
@@ -532,11 +249,11 @@ return(<section className="bg-[#EECCFE] w-[90%] mx-auto rounded-lg mb-2 py-8 ant
 export const CategoryItems=(props)=>{
   return(<a
         href="#"
-        className="flex items-center bg-white px-4 py-2 hover:bg-gray-50 rounded-xl"
+        className="flex flex-col items-center px-4 py-2 hover:backdrop-blur-sm hover:bg-gradient-to-b from-[#CAE8FF] to-white hover:border-b-[#1162F2] hover:border-b-4 hover:rounded-br-none hover:rounded-bl-none rounded-xl"
       >
         {props?.catImg}
         
-        <span className="text-sm font-medium text-gray-900 ">
+        <span className="inline-block w-20 truncate text-sm font-medium text-gray-900 hover:w-auto hover:overflow-visible ">
           {props?.catName}
         </span>
       </a>);
